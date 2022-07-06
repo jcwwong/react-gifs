@@ -21,7 +21,7 @@ class App extends Component {
       // selected gif
       selectedGifId: "a93jwI0wkWTQs",
     };
-    this.search('homer');
+    this.search('homer toasty');
     this.select = this.select.bind(this);
   }
 
