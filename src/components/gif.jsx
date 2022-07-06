@@ -6,8 +6,16 @@ import React, { Component } from "react";
 
 
 class Gif extends Component {
+  shouldComponentUpdate(nextProps, nextState) { // cuts the step of calling render to cf virtual DOM to actual DOM
+    // ie when you change searchBar value, its a changed props and therefore normally renders this
+    return nextProps.id !== this.props.id; // dont call render if props.id didn't change
+    // cannot do this.props !== nextProps because it compares the memory pointer so needs an actual value ie .id
+  }
+
   handleClick = () => {
-    this.props.select(this.props.id);
+    if (this.props.select) {
+      this.props.select(this.props.id);
+    }
   };
 
   render() {

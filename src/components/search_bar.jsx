@@ -11,6 +11,7 @@ class SearchBar extends Component {
     return (
       <input
         type="text"
+        placeholder="Homer"
         className="form-control form-search"
         onChange={this.handleUpdate}
       />
